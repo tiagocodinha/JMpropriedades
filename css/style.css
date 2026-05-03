@@ -330,9 +330,9 @@ svg.i {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=1920');
+  background-image: url('/images/encosta.png');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 55%;
   transform: scale(1.04);
   transition: transform 8s var(--ease);
 }
@@ -365,9 +365,9 @@ svg.i {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(28,28,26,0.1) 0%,
-    rgba(28,28,26,0.45) 60%,
-    rgba(28,28,26,0.6) 100%
+    rgba(10,20,30,0.25) 0%,
+    rgba(10,20,30,0.35) 50%,
+    rgba(10,20,30,0.55) 100%
   );
 }
 
@@ -382,25 +382,91 @@ svg.i {
   padding-top: var(--header-h);
 }
 
+.hero-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.8rem;
+}
+
 .hero-title {
   font-family: var(--serif);
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 7vw, 6.5rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.05;
   color: var(--white);
   letter-spacing: -0.02em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
 }
 .hero-title em { font-style: italic; font-weight: 400; color: var(--gold-light); }
 
+.hero-rule {
+  width: 52px;
+  height: 2px;
+  background: var(--gold-light);
+  margin: 1.4rem auto 1.4rem;
+  border-radius: 2px;
+}
+
 .hero-sub {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255,255,255,0.8);
-  max-width: 700px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(255,255,255,0.82);
+  max-width: 600px;
   margin-inline: auto;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   font-weight: 300;
-  text-wrap: balance;
+  line-height: 1.7;
+}
+
+/* ── Hero Feature Badges ──────────────────────────────────── */
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-bottom: 2.5rem;
+}
+
+.hero-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-badge-icon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  margin-bottom: 0.2rem;
+}
+.hero-badge-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold-light);
+}
+
+.hero-badge-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.hero-badge-sub {
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
 }
 
 .hero-ctas { display: flex; gap: 1rem; justify-content: center; }
@@ -495,11 +561,68 @@ svg.i {
 .flatpickr-prev-month svg, .flatpickr-next-month svg { fill: var(--dark) !important; }
 .flatpickr-day.today { border-color: var(--gold) !important; }
 
+/* ── Flatpickr year picker ───────────────────────────────── */
+.numInputWrapper span.arrowUp,
+.numInputWrapper span.arrowDown { display: none !important; }
+.numInput.cur-year {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  padding: 0 2px !important;
+  width: 4.2ch !important;
+  color: inherit !important;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+.numInput.cur-year:focus { outline: none !important; box-shadow: none !important; }
+.numInputWrapper { position: relative !important; }
+
+/* Year grid popup */
+.fp-year-grid {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.18);
+  padding: 0.6rem;
+  z-index: 99999;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  min-width: 168px;
+}
+.fp-year-btn {
+  padding: 7px 6px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #1C1C1A;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.fp-year-btn:hover { background: #F0EBE3; }
+.fp-year-btn.is-current { background: #076366; color: #fff; font-weight: 700; }
+
 .booking-sep {
   width: 1px;
   height: 36px;
   background: rgba(255,255,255,0.2);
   flex-shrink: 0;
+}
+
+.field-guests {
+  align-items: center;
 }
 
 .booking-guests {
@@ -549,6 +672,17 @@ svg.i {
 .btn-booking:hover { background: var(--dark); transform: translateY(-1px); }
 
 @media (max-width: 768px) {
+  .hero-badges {
+    gap: 1.2rem;
+  }
+  .hero-badge-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .hero-badge-icon svg {
+    width: 17px;
+    height: 17px;
+  }
   .hero-booking {
     flex-direction: column;
     border-radius: 20px;
@@ -840,7 +974,46 @@ svg.i {
   font-size: 0.875rem;
 }
 
-/* ── Section: Reviews ─────────────────────────────────────── */
+/* ── Section: Reviews (dark) ─────────────────────────────── */
+.section-reviews-dark {
+  background: var(--dark);
+  position: relative;
+}
+.section-reviews-dark .label {
+  color: var(--gold-light);
+}
+.section-reviews-dark .section-header h2,
+.section-reviews-dark .section-header p:not(.label) {
+  color: var(--white);
+}
+.section-reviews-dark .reviews-rating-bar .big-number {
+  color: var(--white);
+}
+.section-reviews-dark .reviews-rating-bar .stars {
+  color: var(--gold-light);
+}
+.section-reviews-dark .reviews-rating-bar .count {
+  color: rgba(255,255,255,0.5);
+}
+.section-reviews-dark .review-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.section-reviews-dark .review-card .review-text,
+.section-reviews-dark .review-card .review-name {
+  color: rgba(255,255,255,0.9);
+}
+.section-reviews-dark .review-card .review-origin {
+  color: rgba(255,255,255,0.4);
+}
+.section-reviews-dark .review-card .review-stars {
+  color: var(--gold-light);
+}
+.section-reviews-dark .review-avatar {
+  background: var(--gold);
+  color: var(--white);
+}
+
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

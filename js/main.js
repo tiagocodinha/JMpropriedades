@@ -123,6 +123,49 @@
     });
   });
 
+  /* ── Year picker popup for Flatpickr ───────────────────── */
+  function setupYearPicker(fp) {
+    const cal = fp.calendarContainer;
+    if (!cal || cal._ypDone) return;
+    cal._ypDone = true;
+
+    cal.addEventListener('mousedown', e => {
+      const yearInput = e.target.closest('.numInput.cur-year');
+      if (!yearInput) return;
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Close any open grid first
+      document.querySelectorAll('.fp-year-grid').forEach(p => p.remove());
+
+      const currentYear = parseInt(yearInput.value) || new Date().getFullYear();
+      const grid = document.createElement('div');
+      grid.className = 'fp-year-grid';
+      grid.addEventListener('mousedown', e2 => e2.stopPropagation());
+
+      for (let y = currentYear - 2; y <= currentYear + 6; y++) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'fp-year-btn' + (y === currentYear ? ' is-current' : '');
+        btn.textContent = y;
+        btn.addEventListener('mousedown', e2 => {
+          e2.stopPropagation();
+          e2.preventDefault();
+          fp.jumpToDate(new Date(y, fp.currentMonth, 1));
+          grid.remove();
+        });
+        grid.appendChild(btn);
+      }
+
+      const wrapper = yearInput.closest('.numInputWrapper');
+      wrapper.style.position = 'relative';
+      wrapper.appendChild(grid);
+
+      const close = () => { grid.remove(); document.removeEventListener('mousedown', close); };
+      setTimeout(() => document.addEventListener('mousedown', close), 0);
+    });
+  }
+
   /* ── Hero Booking Bar (Flatpickr) ───────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
     if (!document.getElementById('heroCheckin')) return;
@@ -147,6 +190,7 @@
       locale: lang === 'pt' ? 'pt' : 'default',
       showMonths: months,
       disableMobile: true,
+      onOpen(d, s, fp) { setupYearPicker(fp); },
       onChange([date]) {
         selectedEnd = date;
         dispOut.innerHTML = `<strong>${fmt(date)}</strong>`;
@@ -160,6 +204,7 @@
       locale: lang === 'pt' ? 'pt' : 'default',
       showMonths: months,
       disableMobile: true,
+      onOpen(d, s, fp) { setupYearPicker(fp); },
       onChange([date]) {
         selectedStart = date;
         dispIn.innerHTML = `<strong>${fmt(date)}</strong>`;
