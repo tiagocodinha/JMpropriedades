@@ -9,6 +9,7 @@
   <meta property="og:description" content="Two exclusive private villas near Nazaré. Book direct and save.">
   <meta property="og:image" content="https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=1200">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -57,86 +58,56 @@
 <!-- ═══ HERO ══════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-sea"></div>
+  <div class="hero-grain"></div>
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
-      <p class="label hero-label">
-        <span class="en">Nazaré, Portugal</span>
-        <span class="pt">Nazaré, Portugal</span>
-      </p>
       <h1 class="hero-title">
-        <span class="en">Where the<br><em>Atlantic</em><br>meets elegance.</span>
-        <span class="pt bl">Onde o<br><em>Atlântico</em><br>encontra a elegância.</span>
+        <span class="en">Nazaré.<br><em>Stay different.</em></span>
+        <span class="pt">Nazaré.<br><em>Fique diferente.</em></span>
       </h1>
       <p class="hero-sub">
-        <span class="en">Two private villas near Nazaré. Curated for those who seek more than a stay.</span>
-        <span class="pt">Duas casas privadas perto de Nazaré. Para quem procura mais do que uma estadia.</span>
+        <span class="en">Two private villas with pool. Five minutes from the ocean.</span>
+        <span class="pt">Duas casas privadas com piscina. A cinco minutos do oceano.</span>
       </p>
-      <div class="hero-ctas">
-        <a href="/villas/" class="btn btn-primary">
-          <span class="en">Explore Villas</span>
-          <span class="pt">Ver Casas</span>
-        </a>
-        <a href="/experiencia/" class="btn btn-outline-white">
-          <span class="en">Discover Nazaré</span>
-          <span class="pt">Descobrir Nazaré</span>
-        </a>
+      <!-- Booking bar -->
+      <div class="hero-booking" id="heroBooking">
+        <div class="hero-booking-field" id="fieldCheckin">
+          <span class="booking-label">Check-in</span>
+          <span class="booking-value" id="dispCheckin">
+            <span class="en">Select date</span><span class="pt">Escolher data</span>
+          </span>
+          <input type="text" id="heroCheckin" class="booking-fp-input" readonly placeholder=" ">
+        </div>
+        <div class="booking-sep"></div>
+        <div class="hero-booking-field" id="fieldCheckout">
+          <span class="booking-label">Check-out</span>
+          <span class="booking-value" id="dispCheckout">
+            <span class="en">Select date</span><span class="pt">Escolher data</span>
+          </span>
+          <input type="text" id="heroCheckout" class="booking-fp-input" readonly placeholder=" ">
+        </div>
+        <div class="booking-sep"></div>
+        <div class="hero-booking-field">
+          <span class="booking-label en">Guests</span>
+          <span class="booking-label pt">Hóspedes</span>
+          <div class="booking-guests">
+            <button type="button" class="guests-btn" id="guestsMinus">−</button>
+            <span id="guestsNum">2</span>
+            <button type="button" class="guests-btn" id="guestsPlus">+</button>
+          </div>
+        </div>
+        <button type="button" class="btn-booking" id="heroBookBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span class="en">Check availability</span>
+          <span class="pt">Verificar datas</span>
+        </button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ INTRO ═════════════════════════════════════════════════ -->
-<section class="section">
-  <div class="container">
-    <div class="intro-grid">
-      <div class="intro-text">
-        <p class="label reveal">
-          <span class="en">Our Story</span>
-          <span class="pt">A Nossa História</span>
-        </p>
-        <h2 class="display-2 reveal reveal-delay-1">
-          <span class="en">A family affair,<br>an Atlantic <em>obsession.</em></span>
-          <span class="pt bl">Uma paixão de família,<br>uma obsessão <em>atlântica.</em></span>
-        </h2>
-        <p class="body-lg reveal reveal-delay-2">
-          <span class="en">Born from a love for Nazaré's raw beauty, we created two exceptional homes where every detail was chosen to elevate your stay. No generic rentals. No compromise.</span>
-          <span class="pt">Nascidas do amor pela beleza de Nazaré, criámos duas casas extraordinárias onde cada detalhe foi escolhido para elevar a vossa estadia. Sem rentals genéricos. Sem compromissos.</span>
-        </p>
-        <p class="reveal reveal-delay-2" style="color:var(--text-light); margin-bottom:2rem;">
-          <span class="en">Situated between Nazaré, São Martinho do Porto and the Atlantic coast, our properties offer privacy, comfort and a front-row seat to one of Europe's most dramatic coastlines.</span>
-          <span class="pt">Situadas entre Nazaré, São Martinho do Porto e a costa atlântica, as nossas propriedades oferecem privacidade, conforto e a melhor vista sobre uma das costas mais dramáticas da Europa.</span>
-        </p>
-        <a href="/sobre/" class="btn-text reveal reveal-delay-3">
-          <span class="en">Our story</span>
-          <span class="pt">A nossa história</span>
-        </a>
-        <div class="intro-stats reveal reveal-delay-3">
-          <div class="stat">
-            <div class="stat-number">4.9<span>★</span></div>
-            <div class="stat-label"><span class="en">Average Rating</span><span class="pt">Avaliação Média</span></div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">5<span>min</span></div>
-            <div class="stat-label"><span class="en">From Nazaré</span><span class="pt">De Nazaré</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="intro-image reveal reveal-delay-2">
-        <img
-          src="https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=960"
-          alt="Casa da Encosta — Nazaré"
-          loading="lazy"
-          onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80'"
-        >
-        <div class="intro-image-badge">
-          <div class="num">Top</div>
-          <div class="txt">5% Airbnb</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ VILLAS ════════════════════════════════════════════════ -->
 <section class="section villas-section">
@@ -160,15 +131,13 @@
       <div class="villa-card reveal">
         <div class="villa-card-img">
           <img
-            src="https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=800"
+            src="/images/insta3.jpg"
             alt="Casa da Encosta"
             loading="lazy"
-            onerror="this.src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80'"
           >
           <div class="villa-card-tag">⭐ <span class="en">Guest Favourite</span><span class="pt">Favorito</span></div>
         </div>
         <div class="villa-card-body">
-          <p class="label"><span class="en">Villa One · 4.98★</span><span class="pt">Casa Um · 4.98★</span></p>
           <h3>Casa da Encosta</h3>
           <p>
             <span class="en">A spacious 5-bedroom villa between Nazaré, São Martinho do Porto and Salgado beach. Private pool, games room with snooker and foosball, wine cellar, and daily breakfast included — fresh bread every morning.</span>
@@ -191,16 +160,16 @@
       <!-- Villa 2: T2 Nazaré -->
       <div class="villa-card reveal reveal-delay-2">
         <div class="villa-card-img">
+          <!-- TODO: Replace with a real T2 photo → /images/t2-nazare.jpg -->
           <img
-            src="https://a0.muscache.com/im/pictures/miso/Hosting-873114183835748649/original/3295ef61-d54b-4a95-a730-ace9e6511892.jpeg?im_w=800"
+            src="/images/t2-nazare.jpg"
             alt="T2 Nazaré com Piscina"
             loading="lazy"
-            onerror="this.src='https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=800&q=80'"
+            style="object-fit:cover; background: linear-gradient(135deg,#c8dde0 0%,#e8f4f5 100%);"
           >
           <div class="villa-card-tag">★ 4.88</div>
         </div>
         <div class="villa-card-body">
-          <p class="label"><span class="en">Villa Two · 4.88★</span><span class="pt">Casa Dois · 4.88★</span></p>
           <h3>T2 Nazaré<br><span style="font-size:1.1rem; font-weight:400; font-style:italic;">com Piscina</span></h3>
           <p>
             <span class="en">A beautiful, modern apartment in Pederneira, just above Nazaré. Two bedrooms, two private bathrooms, pool, air conditioning and free garage parking. Perfect for couples or small families.</span>
@@ -370,36 +339,36 @@
   <div class="container">
     <div class="section-header reveal" style="margin-bottom:1rem;">
       <p class="label">Instagram</p>
-      <h3 style="font-size:1.8rem;">@jmvillasnazare</h3>
+      <h3 style="font-size:1.8rem;">@casadaencostanazare</h3>
     </div>
     <div class="insta-grid reveal">
       <div class="insta-item">
-        <img src="https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=400" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1574648576533-a2b4ad49eb94?w=400&q=75'">
+        <img src="/images/insta1.jpg" alt="Casa da Encosta" loading="lazy">
         <div class="insta-overlay">📷</div>
       </div>
       <div class="insta-item">
-        <img src="https://a0.muscache.com/im/pictures/b948d67c-2f77-4261-b237-fd7567350c97.jpg?im_w=400" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1662474382995-fa2ad7b61f15?w=400&q=75'">
+        <img src="/images/insta2.jpg" alt="Casa da Encosta" loading="lazy">
         <div class="insta-overlay">📷</div>
       </div>
       <div class="insta-item">
-        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-873114183835748649/original/3295ef61-d54b-4a95-a730-ace9e6511892.jpeg?im_w=400" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&q=75'">
+        <img src="/images/insta3.jpg" alt="Casa da Encosta" loading="lazy">
         <div class="insta-overlay">📷</div>
       </div>
       <div class="insta-item">
-        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-873114183835748649/original/ebaeaa41-71a8-4998-89ad-8fabbf6871c1.jpeg?im_w=400" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=400&q=75'">
+        <img src="/images/insta4.jpg" alt="Casa da Encosta" loading="lazy">
         <div class="insta-overlay">📷</div>
       </div>
       <div class="insta-item">
-        <img src="https://a0.muscache.com/im/pictures/2f1ad087-8cc9-404f-97db-eb492359878e.jpg?im_w=400" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1574648576533-a2b4ad49eb94?w=400&q=75'">
+        <img src="/images/insta5.jpg" alt="Casa da Encosta" loading="lazy">
         <div class="insta-overlay">📷</div>
       </div>
       <div class="insta-item">
-        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-873114183835748649/original/8755fb4a-0e4c-4e14-8b7b-9fa57d0822b0.jpeg?im_w=400" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=75'">
+        <img src="/images/insta6.jpg" alt="Casa da Encosta" loading="lazy">
         <div class="insta-overlay">📷</div>
       </div>
     </div>
     <div style="text-align:center; margin-top:2rem;" class="reveal">
-      <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-text">
+      <a href="https://www.instagram.com/casadaencostanazare" target="_blank" rel="noopener" class="btn-text">
         <span class="en">Follow us</span>
         <span class="pt">Seguir-nos</span>
       </a>
@@ -556,5 +525,7 @@
 
 
 <script src="/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
 </body>
 </html>

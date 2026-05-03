@@ -82,9 +82,7 @@
   /* ── Hero BG pan ────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
     const heroBg = document.querySelector('.hero-bg');
-    if (heroBg) {
-      setTimeout(() => heroBg.classList.add('loaded'), 100);
-    }
+    if (heroBg) setTimeout(() => heroBg.classList.add('loaded'), 100);
   });
 
   /* ── FAQ Accordion ──────────────────────────────────────── */
@@ -122,6 +120,92 @@
       btn.textContent = currentLang === 'pt' ? ptMsg : enMsg;
       btn.disabled = true;
       btn.style.background = '#2d7a4a';
+    });
+  });
+
+  /* ── Hero Booking Bar (Flatpickr) ───────────────────────── */
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!document.getElementById('heroCheckin')) return;
+
+    const dispIn  = document.getElementById('dispCheckin');
+    const dispOut = document.getElementById('dispCheckout');
+    const guestsNum   = document.getElementById('guestsNum');
+    const guestsMinus = document.getElementById('guestsMinus');
+    const guestsPlus  = document.getElementById('guestsPlus');
+    const bookBtn     = document.getElementById('heroBookBtn');
+    const lang = document.body.classList.contains('is-pt') ? 'pt' : 'en';
+
+    const fmt = d => d.toLocaleDateString(lang === 'pt' ? 'pt-PT' : 'en-GB', { day: 'numeric', month: 'short' });
+
+    let selectedStart = null, selectedEnd = null;
+
+    const months = window.innerWidth >= 768 ? 2 : 1;
+
+    const fpOut = flatpickr('#heroCheckout', {
+      minDate: 'today',
+      dateFormat: 'Y-m-d',
+      locale: lang === 'pt' ? 'pt' : 'default',
+      showMonths: months,
+      disableMobile: true,
+      onChange([date]) {
+        selectedEnd = date;
+        dispOut.innerHTML = `<strong>${fmt(date)}</strong>`;
+        document.getElementById('fieldCheckout').classList.add('has-value');
+      }
+    });
+
+    flatpickr('#heroCheckin', {
+      minDate: 'today',
+      dateFormat: 'Y-m-d',
+      locale: lang === 'pt' ? 'pt' : 'default',
+      showMonths: months,
+      disableMobile: true,
+      onChange([date]) {
+        selectedStart = date;
+        dispIn.innerHTML = `<strong>${fmt(date)}</strong>`;
+        document.getElementById('fieldCheckin').classList.add('has-value');
+        // auto-open checkout, set min date
+        const next = new Date(date);
+        next.setDate(next.getDate() + 1);
+        fpOut.set('minDate', next);
+        if (!selectedEnd || selectedEnd <= date) {
+          selectedEnd = null;
+          dispOut.innerHTML = '<span class="en">Select date</span><span class="pt">Escolher data</span>';
+          document.getElementById('fieldCheckout').classList.remove('has-value');
+        }
+        setTimeout(() => fpOut.open(), 50);
+      }
+    });
+
+    // Click on display areas also opens pickers
+    document.getElementById('fieldCheckin').addEventListener('click', () =>
+      document.getElementById('heroCheckin')._flatpickr.open());
+    document.getElementById('fieldCheckout').addEventListener('click', () =>
+      document.getElementById('heroCheckout')._flatpickr.open());
+
+    // Guest counter
+    let guests = 2;
+    guestsMinus.addEventListener('click', () => {
+      if (guests > 1) { guests--; guestsNum.textContent = guests; }
+    });
+    guestsPlus.addEventListener('click', () => {
+      if (guests < 10) { guests++; guestsNum.textContent = guests; }
+    });
+
+    // Book — replace URL with Lodgify/Hostaway/Smoobu booking page
+    const BOOKING_URL = 'https://booking.lodgify.com/casadaencosta'; // ← substituir
+    bookBtn.addEventListener('click', () => {
+      if (!selectedStart || !selectedEnd) {
+        document.getElementById('heroCheckin')._flatpickr.open();
+        return;
+      }
+      const toStr = d => d.toISOString().split('T')[0];
+      const params = new URLSearchParams({
+        startDate: toStr(selectedStart),
+        endDate:   toStr(selectedEnd),
+        guests
+      });
+      window.open(`${BOOKING_URL}?${params}`, '_blank');
     });
   });
 
