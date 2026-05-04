@@ -1,10 +1,10 @@
-/* ============================================================
-   JM Villas Nazaré — Main Stylesheet
+﻿/* ============================================================
+   JM Villas NazarÃ© â€” Main Stylesheet
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
-/* ── Reset & Base ─────────────────────────────────────────── */
+/* â”€â”€ Reset & Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -42,14 +42,14 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { cursor: pointer; font-family: var(--sans); border: none; background: none; }
 
-/* ── Language Toggle ──────────────────────────────────────── */
+/* â”€â”€ Language Toggle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .pt { display: none; }
 body.is-pt .en { display: none; }
 body.is-pt .pt { display: inline; }
 body.is-pt .pt.bl { display: block; }
 body.is-pt .pt.fl { display: flex; }
 
-/* ── Typography ───────────────────────────────────────────── */
+/* â”€â”€ Typography â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; }
 
 .display-1 { font-size: clamp(2.8rem, 6vw, 5.5rem); letter-spacing: -0.02em; }
@@ -64,7 +64,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; 
   color: var(--gold);
 }
 
-/* ── SVG Icon System ──────────────────────────────────────── */
+/* â”€â”€ SVG Icon System â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 svg.i {
   width: 20px; height: 20px;
   fill: none;
@@ -85,7 +85,7 @@ svg.i {
 .body-lg { font-size: 1.125rem; line-height: 1.8; }
 .body-sm { font-size: 0.875rem; }
 
-/* ── Layout ───────────────────────────────────────────────── */
+/* â”€â”€ Layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .container {
   width: 100%;
   max-width: var(--max-w);
@@ -96,7 +96,7 @@ svg.i {
 .section { padding-block: clamp(5rem, 10vw, 9rem); }
 .section-sm { padding-block: clamp(3rem, 6vw, 5rem); }
 
-/* ── Header ───────────────────────────────────────────────── */
+/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -141,7 +141,7 @@ svg.i {
   width: auto;
   display: block;
   transition: filter var(--trans);
-  /* Natural colour: teal #076366 — shows on white header */
+  /* Natural colour: teal #076366 â€” shows on white header */
 }
 #header.hero-mode .logo-img {
   filter: brightness(0) invert(1); /* white on dark hero */
@@ -150,7 +150,7 @@ svg.i {
 #header:not(.hero-mode) .logo-img {
   filter: none; /* teal on white header */
 }
-/* Footer logo — always white */
+/* Footer logo â€” always white */
 .footer-brand .logo-img {
   filter: brightness(0) invert(1);
   height: 32px;
@@ -276,7 +276,7 @@ svg.i {
 }
 .mobile-menu a:hover { color: var(--gold); }
 
-/* ── Buttons ──────────────────────────────────────────────── */
+/* â”€â”€ Buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -315,10 +315,10 @@ svg.i {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
 }
-.btn-text::after { content: ' →'; }
+.btn-text::after { content: ' â†’'; }
 .btn-text:hover { color: var(--dark); }
 
-/* ── Hero ─────────────────────────────────────────────────── */
+/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -330,7 +330,7 @@ svg.i {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/images/encosta.png');
+  background-image: url('../images/encosta.png');
   background-size: cover;
   background-position: center 55%;
   transform: scale(1.04);
@@ -420,7 +420,7 @@ svg.i {
   line-height: 1.7;
 }
 
-/* ── Hero Feature Badges ──────────────────────────────────── */
+/* â”€â”€ Hero Feature Badges â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero-badges {
   display: flex;
   justify-content: center;
@@ -471,7 +471,7 @@ svg.i {
 
 .hero-ctas { display: flex; gap: 1rem; justify-content: center; }
 
-/* ── Hero Booking Bar ─────────────────────────────────────── */
+/* â”€â”€ Hero Booking Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero-booking {
   display: flex;
   align-items: center;
@@ -561,7 +561,7 @@ svg.i {
 .flatpickr-prev-month svg, .flatpickr-next-month svg { fill: var(--dark) !important; }
 .flatpickr-day.today { border-color: var(--gold) !important; }
 
-/* ── Flatpickr year picker ───────────────────────────────── */
+/* â”€â”€ Flatpickr year picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .numInputWrapper span.arrowUp,
 .numInputWrapper span.arrowDown { display: none !important; }
 .numInput.cur-year {
@@ -712,7 +712,7 @@ svg.i {
 }
 .btn-round:hover { background: var(--white); color: var(--dark); transform: translateY(-2px); }
 
-/* ── Section: Intro strip ─────────────────────────────────── */
+/* â”€â”€ Section: Intro strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .strip {
   background: var(--dark);
   padding-block: 1.5rem;
@@ -741,7 +741,7 @@ svg.i {
   border-radius: 50%;
 }
 
-/* ── Section: Intro ───────────────────────────────────────── */
+/* â”€â”€ Section: Intro â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -815,7 +815,7 @@ svg.i {
   opacity: 0.9;
 }
 
-/* ── Section: Villas ──────────────────────────────────────── */
+/* â”€â”€ Section: Villas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .villas-section { background: var(--sand); }
 
 .section-header {
@@ -900,7 +900,7 @@ svg.i {
   flex-shrink: 0;
 }
 
-/* ── Section: Experience ──────────────────────────────────── */
+/* â”€â”€ Section: Experience â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .exp-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -938,7 +938,7 @@ svg.i {
 }
 .exp-card.large { grid-column: span 2; aspect-ratio: auto; min-height: 480px; }
 
-/* ── Section: Why book direct ─────────────────────────────── */
+/* â”€â”€ Section: Why book direct â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .direct-section { background: var(--dark); color: var(--white); }
 .direct-section .section-header h2 { color: var(--white); }
 .direct-section .section-header p { color: rgba(255,255,255,0.6); }
@@ -974,7 +974,7 @@ svg.i {
   font-size: 0.875rem;
 }
 
-/* ── Section: Reviews (dark) ─────────────────────────────── */
+/* â”€â”€ Section: Reviews (dark) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .section-reviews-dark {
   background: var(--dark);
   position: relative;
@@ -1072,7 +1072,7 @@ svg.i {
 .reviews-rating-bar .stars { color: var(--gold); font-size: 1.2rem; margin-block: 0.5rem; }
 .reviews-rating-bar .count { color: var(--text-light); font-size: 0.85rem; }
 
-/* ── Section: Instagram ───────────────────────────────────── */
+/* â”€â”€ Section: Instagram â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .insta-section { background: var(--sand); }
 .insta-grid {
   display: grid;
@@ -1107,7 +1107,7 @@ svg.i {
 }
 .insta-item:hover .insta-overlay { opacity: 1; }
 
-/* ── Section: CTA Banner ──────────────────────────────────── */
+/* â”€â”€ Section: CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cta-banner {
   position: relative;
   padding-block: clamp(5rem, 10vw, 9rem);
@@ -1152,7 +1152,7 @@ svg.i {
   flex-wrap: wrap;
 }
 
-/* ── FAQ ──────────────────────────────────────────────────── */
+/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .faq-list {
   max-width: 800px;
   margin-inline: auto;
@@ -1200,7 +1200,7 @@ svg.i {
   padding-bottom: 1.5rem;
 }
 
-/* ── Footer ───────────────────────────────────────────────── */
+/* â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .footer {
   background: var(--dark);
   color: rgba(255,255,255,0.7);
@@ -1240,7 +1240,7 @@ svg.i {
   opacity: 0.5;
 }
 
-/* ── Floating Buttons ─────────────────────────────────────── */
+/* â”€â”€ Floating Buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .fab-group {
   position: fixed;
   bottom: 2rem; right: 2rem;
@@ -1279,7 +1279,7 @@ svg.i {
 }
 
 
-/* ── Animations ───────────────────────────────────────────── */
+/* â”€â”€ Animations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -1291,7 +1291,7 @@ svg.i {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ── Page Hero (inner pages) ──────────────────────────────── */
+/* â”€â”€ Page Hero (inner pages) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .page-hero {
   position: relative;
   height: 55vh;
@@ -1320,7 +1320,7 @@ svg.i {
 .page-hero-content .label { color: var(--gold-light); margin-bottom: 0.75rem; }
 .page-hero-content h1 { color: var(--white); }
 
-/* ── Villa single page ────────────────────────────────────── */
+/* â”€â”€ Villa single page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .gallery-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -1417,7 +1417,7 @@ svg.i {
   gap: 0.5rem;
 }
 
-/* ── Map section ──────────────────────────────────────────── */
+/* â”€â”€ Map section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .map-wrapper {
   border-radius: 8px;
   overflow: hidden;
@@ -1425,7 +1425,7 @@ svg.i {
 }
 .map-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-/* ── Contact form ─────────────────────────────────────────── */
+/* â”€â”€ Contact form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -1494,7 +1494,7 @@ svg.i {
 .contact-item-text a { font-weight: 500; }
 .contact-item-text a:hover { color: var(--gold); }
 
-/* ── Responsive ───────────────────────────────────────────── */
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 1024px) {
   .nav { display: none; }
   .btn-header { display: none; }
@@ -1529,13 +1529,13 @@ svg.i {
   .villa-amenities { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-  /* Hide FAB book button — booking bar already handles it */
+  /* Hide FAB book button â€” booking bar already handles it */
   .fab-book { display: none !important; }
   .hero-title { white-space: normal; font-size: clamp(1.8rem, 7vw, 3rem); }
   .intro-stats { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .insta-grid { grid-template-columns: repeat(2, 1fr); }
-  /* Hide lang switcher from header — it's in the hamburger menu */
+  /* Hide lang switcher from header â€” it's in the hamburger menu */
   .header-right .lang-switcher { display: none; }
   /* Smaller logo on mobile */
   .logo-img { height: 26px !important; }
@@ -1551,3 +1551,4 @@ svg.i {
   .intro-stats { grid-template-columns: 1fr 1fr; }
   .fab-group { bottom: 1rem; right: 1rem; }
 }
+
