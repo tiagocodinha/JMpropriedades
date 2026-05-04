@@ -15,7 +15,8 @@
       "WebFetch(domain:unsplash.com)",
       "Bash(python3 -c ' *)",
       "Bash(cp \"/c/Users/tiago/Desktop/JMARQUES - Gestão de Propriedades_favicon.svg\" \"/c/Users/tiago/Documents/GitHub/JMpropriedades/images/favicon.svg\")",
-      "Bash(cp \"/c/Users/tiago/Desktop/JMARQUES - Gestão de Propriedades_logo \\(verde\\).svg\" \"/c/Users/tiago/Documents/GitHub/JMpropriedades/images/logo.svg\")"
+      "Bash(cp \"/c/Users/tiago/Desktop/JMARQUES - Gestão de Propriedades_logo \\(verde\\).svg\" \"/c/Users/tiago/Documents/GitHub/JMpropriedades/images/logo.svg\")",
+      "mcp__Claude_in_Chrome__browser_batch"
     ]
   }
 }

@@ -34,10 +34,17 @@
       font-size: 0.875rem;
     }
     .tip-icon { flex-shrink: 0; margin-top: 0.1rem; width: 18px; height: 18px; stroke: var(--gold); }
+    @media (max-width: 900px) {
+      .day-trips-grid { grid-template-columns: repeat(3, 1fr) !important; }
+    }
     @media (max-width: 768px) {
       .exp-detail-grid { grid-template-columns: 1fr; gap: 2rem; }
       .exp-detail-grid:nth-child(even) .exp-detail-img,
       .exp-detail-grid:nth-child(even) .exp-detail-text { order: unset; }
+      .day-trips-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 480px) {
+      .day-trips-grid { grid-template-columns: 1fr 1fr !important; }
     }
   </style>
 </head>
@@ -115,19 +122,19 @@
         <img src="https://images.unsplash.com/photo-1579478656262-92412544f2b8?w=900&q=80" alt="Nazaré big waves" loading="lazy">
       </div>
       <div class="exp-detail-text reveal reveal-delay-1">
-        <p class="label"><span class="en">Icon</span><span class="pt">Ícone</span></p>
+        <p class="label"><span class="en">World Record</span><span class="pt">Recorde Mundial</span></p>
         <h2 class="display-3">
           <span class="en">The Waves of<br>Praia do Norte</span>
           <span class="pt bl">As Ondas da<br>Praia do Norte</span>
         </h2>
         <p>
-          <span class="en">Nazaré holds the world record for the largest wave ever surfed — over 30 metres. Every winter, the world's best big wave surfers descend on this small Portuguese town. Even from the clifftop viewpoint, the scale is utterly humbling.</span>
-          <span class="pt">Nazaré detém o recorde mundial da maior onda surfada — mais de 30 metros. Todos os invernos, os melhores surfistas de ondas grandes do mundo convergem nesta pequena cidade portuguesa. Mesmo do miradouro na falésia, a escala é de tirar o fôlego.</span>
+          <span class="en">Beneath Nazaré lies the deepest submarine canyon in Europe — 5,000 metres deep and 230 km long. It funnels Atlantic swells directly into the bay, creating the world's largest rideable waves. In 2020, Sebastien Steudtner surfed a 26.21 m wave here, setting the current world record. Every winter, the planet's elite big-wave surfers return.</span>
+          <span class="pt">Sob Nazaré encontra-se o maior canhão submarino da Europa — 5.000 metros de profundidade e 230 km de comprimento. Este canaliza as ondulações do Atlântico diretamente para a baía, criando as maiores ondas surfadas do mundo. Em 2020, Sebastien Steudtner surfou uma onda de 26,21 m aqui, estabelecendo o atual recorde mundial. Todos os invernos, os melhores surfistas de ondas gigantes do mundo regressam.</span>
         </p>
         <div class="tip-list">
-          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><strong>Praia do Norte</strong> — <span class="en">best viewed from the lighthouse promontory</span><span class="pt">melhor vista do promontório do farol</span></span></div>
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><strong>Praia do Norte</strong> — <span class="en">best viewed from the Forte promontory</span><span class="pt">melhor vista do promontório do Forte</span></span></div>
           <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span><span class="en">Wave season: October — March</span><span class="pt">Época de ondas: Outubro — Março</span></span></div>
-          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg><span><span class="en">Summer: ideal for beginners and swimming</span><span class="pt">Verão: ideal para iniciantes e banhos</span></span></div>
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg><span><span class="en">Baloiço da Ladeira: clifftop swing with a jaw-dropping view</span><span class="pt">Baloiço da Ladeira: baloiço na falésia com vista de tirar o fôlego</span></span></div>
         </div>
       </div>
     </div>
@@ -201,6 +208,52 @@
       </div>
     </div>
 
+    <!-- Forte -->
+    <div class="exp-detail-grid">
+      <div class="exp-detail-img reveal">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Forte de São Miguel Arcanjo Nazaré" loading="lazy">
+      </div>
+      <div class="exp-detail-text reveal reveal-delay-1">
+        <p class="label"><span class="en">History</span><span class="pt">História</span></p>
+        <h2 class="display-3">
+          <span class="en">Forte de São<br>Miguel Arcanjo</span>
+          <span class="pt bl">Forte de São<br>Miguel Arcanjo</span>
+        </h2>
+        <p>
+          <span class="en">Built in 1577 at the tip of the Ponta da Nazaré, this small fortification once guarded the coast from pirates and invaders. Today it's home to the <em>Centro Interpretativo do Canhão da Nazaré</em>, where you can learn how the underwater canyon shapes the legendary waves — and discover the stories behind those who dared to ride them.</span>
+          <span class="pt">Construído em 1577 na Ponta da Nazaré, esta pequena fortaleza guardou a costa de piratas e invasores. Hoje alberga o <em>Centro Interpretativo do Canhão da Nazaré</em>, onde pode descobrir como o canhão submarino molda as lendárias ondas — e conhecer as histórias de quem as surfou.</span>
+        </p>
+        <div class="tip-list">
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span><span class="en">The famous "Surfer Wall" — every world record holder signs here</span><span class="pt">A famosa "Parede dos Surfistas" — cada recordista aqui assina</span></span></div>
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><span class="en">Best winter vantage point for watching big waves</span><span class="pt">Melhor miradouro de inverno para ver as ondas gigantes</span></span></div>
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span><span class="en">Interpretation centre open year-round (free entry)</span><span class="pt">Centro interpretativo aberto todo o ano (entrada gratuita)</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tradições -->
+    <div class="exp-detail-grid">
+      <div class="exp-detail-img reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1524207874394-b5de6d197e9f?w=900&q=80" alt="Tradições de Nazaré" loading="lazy">
+      </div>
+      <div class="exp-detail-text reveal">
+        <p class="label"><span class="en">Traditions</span><span class="pt">Tradições</span></p>
+        <h2 class="display-3">
+          <span class="en">Living<br>Traditions</span>
+          <span class="pt bl">Tradições<br>Vivas</span>
+        </h2>
+        <p>
+          <span class="en">Nazaré is one of the last places in Portugal where centuries-old fishing traditions are still genuinely alive. Local women still wear the iconic seven-layered skirt (<em>sete saias</em>) and dry salted fish on wooden racks along the promenade — a sight unchanged for generations. The Museu do Peixe Seco and the Museu Etnográfico tell the full story.</span>
+          <span class="pt">A Nazaré é um dos últimos lugares em Portugal onde as tradições piscatórias centenárias continuam genuinamente vivas. As mulheres nazarenas ainda usam o icónico traje das sete saias e secam peixe salgado em estendais de madeira ao longo da avenida — uma cena inalterada há gerações. O Museu do Peixe Seco e o Museu Etnográfico contam esta história.</span>
+        </p>
+        <div class="tip-list">
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span><span class="en">The traditional <em>sete saias</em> dress is still worn daily — not just for tourists</span><span class="pt">O traje das <em>sete saias</em> ainda se usa no dia-a-dia — não é só para turistas</span></span></div>
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2H9v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2z"/></svg><span><span class="en">Watch fresh fish being dried on the beachside promenade</span><span class="pt">Veja o peixe fresco a secar na avenida junto à praia</span></span></div>
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><span class="en">Museu Etnográfico & Museu do Peixe Seco — both in the town centre</span><span class="pt">Museu Etnográfico & Museu do Peixe Seco — ambos no centro da vila</span></span></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -212,28 +265,37 @@
       <h2 class="display-3"><span class="en">Beyond Nazaré</span><span class="pt">Para além de Nazaré</span></h2>
       <p><span class="en">Perfectly positioned for exploring central Portugal.</span><span class="pt">Posição privilegiada para explorar o centro de Portugal.</span></p>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;" class="reveal">
-      <div style="background:var(--white); padding:2rem; border-radius:4px; text-align:center;">
-        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:40px;height:40px;stroke:var(--gold);margin-bottom:1rem;"><path d="M3 21h18M9 21V7l3-4 3 4v14M3 21V10l6-4M21 21V10l-6-4"/></svg></div>
-        <h4 style="font-size:1.1rem; margin-bottom:0.5rem;">Óbidos</h4>
-        <p style="font-size:0.82rem; color:var(--text-light);">25 min · <span class="en">Medieval walled town</span><span class="pt">Vila medieval murada</span></p>
+    <div class="day-trips-grid reveal" style="display:grid; grid-template-columns:repeat(5,1fr); gap:1.5rem;">
+      <div style="background:var(--white); padding:1.75rem 1.25rem; border-radius:4px; text-align:center;">
+        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:36px;height:36px;stroke:var(--gold);"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div>
+        <h4 style="font-size:1rem; margin-bottom:0.4rem;">São Martinho<br>do Porto</h4>
+        <p style="font-size:0.8rem; color:var(--text-light);">15 min · <span class="en">Sheltered lagoon bay</span><span class="pt">Baía lagunare abrigada</span></p>
       </div>
-      <div style="background:var(--white); padding:2rem; border-radius:4px; text-align:center;">
-        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:40px;height:40px;stroke:var(--gold);margin-bottom:1rem;"><path d="M12 2L2 7h20L12 2zM4 7v14h16V7M12 7v14M9 12h6M9 16h6"/></svg></div>
-        <h4 style="font-size:1.1rem; margin-bottom:0.5rem;">Alcobaça</h4>
-        <p style="font-size:0.82rem; color:var(--text-light);">20 min · <span class="en">UNESCO monastery</span><span class="pt">Mosteiro UNESCO</span></p>
+      <div style="background:var(--white); padding:1.75rem 1.25rem; border-radius:4px; text-align:center;">
+        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:36px;height:36px;stroke:var(--gold);"><path d="M3 21h18M9 21V7l3-4 3 4v14M3 21V10l6-4M21 21V10l-6-4"/></svg></div>
+        <h4 style="font-size:1rem; margin-bottom:0.4rem;">Óbidos</h4>
+        <p style="font-size:0.8rem; color:var(--text-light);">25 min · <span class="en">Medieval walled town</span><span class="pt">Vila medieval murada</span></p>
       </div>
-      <div style="background:var(--white); padding:2rem; border-radius:4px; text-align:center;">
-        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:40px;height:40px;stroke:var(--gold);margin-bottom:1rem;"><path d="M12 2l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z"/><path d="M12 22V14"/></svg></div>
-        <h4 style="font-size:1.1rem; margin-bottom:0.5rem;">Batalha</h4>
-        <p style="font-size:0.82rem; color:var(--text-light);">30 min · <span class="en">Gothic masterpiece</span><span class="pt">Obra-prima gótica</span></p>
+      <div style="background:var(--white); padding:1.75rem 1.25rem; border-radius:4px; text-align:center;">
+        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:36px;height:36px;stroke:var(--gold);"><path d="M12 2L2 7h20L12 2zM4 7v14h16V7M12 7v14M9 12h6M9 16h6"/></svg></div>
+        <h4 style="font-size:1rem; margin-bottom:0.4rem;">Alcobaça</h4>
+        <p style="font-size:0.8rem; color:var(--text-light);">20 min · <span class="en">UNESCO monastery</span><span class="pt">Mosteiro UNESCO</span></p>
       </div>
-      <div style="background:var(--white); padding:2rem; border-radius:4px; text-align:center;">
-        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:40px;height:40px;stroke:var(--gold);margin-bottom:1rem;"><rect x="3" y="10" width="4" height="11"/><rect x="10" y="6" width="4" height="15"/><rect x="17" y="3" width="4" height="18"/><path d="M1 21h22"/></svg></div>
-        <h4 style="font-size:1.1rem; margin-bottom:0.5rem;">Lisboa</h4>
-        <p style="font-size:0.82rem; color:var(--text-light);">1h 20min · <span class="en">Capital city</span><span class="pt">Capital</span></p>
+      <div style="background:var(--white); padding:1.75rem 1.25rem; border-radius:4px; text-align:center;">
+        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:36px;height:36px;stroke:var(--gold);"><path d="M12 2l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z"/><path d="M12 22V14"/></svg></div>
+        <h4 style="font-size:1rem; margin-bottom:0.4rem;">Batalha</h4>
+        <p style="font-size:0.8rem; color:var(--text-light);">30 min · <span class="en">Gothic masterpiece</span><span class="pt">Obra-prima gótica</span></p>
+      </div>
+      <div style="background:var(--white); padding:1.75rem 1.25rem; border-radius:4px; text-align:center;">
+        <div style="display:flex;justify-content:center;margin-bottom:1rem;"><svg class="i" viewBox="0 0 24 24" style="width:36px;height:36px;stroke:var(--gold);"><rect x="3" y="10" width="4" height="11"/><rect x="10" y="6" width="4" height="15"/><rect x="17" y="3" width="4" height="18"/><path d="M1 21h22"/></svg></div>
+        <h4 style="font-size:1rem; margin-bottom:0.4rem;">Lisboa</h4>
+        <p style="font-size:0.8rem; color:var(--text-light);">1h 20min · <span class="en">Capital city</span><span class="pt">Capital</span></p>
       </div>
     </div>
+    <p style="font-size:0.78rem; color:var(--text-light); text-align:center; margin-top:1.5rem;" class="reveal">
+      <span class="en">All distances are approximate driving times from Nazaré.</span>
+      <span class="pt">Todas as distâncias são tempos aproximados de condução a partir de Nazaré.</span>
+    </p>
   </div>
 </section>
 
@@ -249,8 +311,8 @@
         <span class="pt bl">A vossa história na Nazaré<br>começa com uma casa.</span>
       </h2>
       <div class="btn-group">
-        <a href="/villa-1/" class="btn btn-primary">Casa Atlântica</a>
-        <a href="/villa-2/" class="btn btn-outline-white">Casa da Falésia</a>
+        <a href="/villa-1/" class="btn btn-primary">Casa da Encosta</a>
+        <a href="/villa-2/" class="btn btn-outline-white">Alohouse Nazaré</a>
       </div>
     </div>
   </div>
@@ -265,8 +327,8 @@
       </div>
       <div class="footer-col">
         <h5><span class="en">Properties</span><span class="pt">Propriedades</span></h5>
-        <a href="/villa-1/">Casa Atlântica</a>
-        <a href="/villa-2/">Casa da Falésia</a>
+        <a href="/villa-1/">Casa da Encosta</a>
+        <a href="/villa-2/">Alohouse Nazaré</a>
       </div>
       <div class="footer-col">
         <h5><span class="en">Explore</span><span class="pt">Explorar</span></h5>
