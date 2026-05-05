@@ -50,7 +50,7 @@
           <span>|</span>
           <button data-lang-btn="pt">PT</button>
         </div>
-        <a href="villas/" class="btn-header">
+        <a href="reservar/" class="btn-header">
           <span class="en">Book Now</span>
           <span class="pt">Reservar</span>
         </a>
@@ -147,7 +147,7 @@
           id="lodgify-search-bar"
           data-website-id="652424"
           data-language-code="pt"
-          data-checkout-page-url="https://checkout.lodgify.com/jose-codinha/pt/#/16403"
+          data-checkout-page-url=""
           data-dates-check-in-label="Check-in"
           data-dates-check-out-label="Check-out"
           data-guests-counter-label="Convidados"
@@ -509,9 +509,16 @@
 
 
 <script src="js/main.js"></script>
+<script>
+  // Point Lodgify search bar to our internal booking page
+  var base = location.hostname.includes('github.io') ? '/JMpropriedades' : '';
+  document.getElementById('lodgify-search-bar')
+    .setAttribute('data-checkout-page-url', location.origin + base + '/reservar/');
+</script>
 <script src="https://app.lodgify.com/portable-search-bar/stable/renderPortableSearchBar.js" defer></script>
 </body>
 </html>
+
 
 
 
