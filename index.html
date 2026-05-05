@@ -10,8 +10,27 @@
   <meta property="og:description" content="Two exclusive private villas near Nazaré. Book direct and save.">
   <meta property="og:image" content="https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=1200">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ldg-psb-background: #ffffff;
+      --ldg-psb-border-radius: 0.42em;
+      --ldg-psb-box-shadow: 0px 24px 54px 0px rgba(0,0,0,0.1);
+      --ldg-psb-padding: 14px;
+      --ldg-psb-input-background: #ffffff;
+      --ldg-psb-button-border-radius: 0.42em;
+      --ldg-psb-color-primary: #076366;
+      --ldg-psb-color-primary-lighter: #83b1b3;
+      --ldg-psb-color-primary-darker: #043233;
+      --ldg-psb-color-primary-contrast: #ffffff;
+      --ldg-semantic-color-primary: #076366;
+      --ldg-semantic-color-primary-lighter: #83b1b3;
+      --ldg-semantic-color-primary-darker: #043233;
+      --ldg-semantic-color-primary-contrast: #ffffff;
+      --ldg-component-modal-z-index: 999;
+    }
+    #lodgify-search-bar { width: 100%; }
+  </style>
 </head>
 <body>
 
@@ -122,38 +141,37 @@
           <span class="hero-badge-sub">TOTAL</span>
         </div>
       </div>
-      <!-- Booking bar -->
-      <div class="hero-booking" id="heroBooking">
-        <div class="hero-booking-field" id="fieldCheckin">
-          <span class="booking-label">Check-in</span>
-          <span class="booking-value" id="dispCheckin">
-            <span class="en">Select date</span><span class="pt">Escolher data</span>
-          </span>
-          <input type="text" id="heroCheckin" class="booking-fp-input" readonly placeholder=" ">
-        </div>
-        <div class="booking-sep"></div>
-        <div class="hero-booking-field" id="fieldCheckout">
-          <span class="booking-label">Check-out</span>
-          <span class="booking-value" id="dispCheckout">
-            <span class="en">Select date</span><span class="pt">Escolher data</span>
-          </span>
-          <input type="text" id="heroCheckout" class="booking-fp-input" readonly placeholder=" ">
-        </div>
-        <div class="booking-sep"></div>
-        <div class="hero-booking-field field-guests">
-          <span class="booking-label en">Guests</span>
-          <span class="booking-label pt">Hóspedes</span>
-          <div class="booking-guests">
-            <button type="button" class="guests-btn" id="guestsMinus">−</button>
-            <span id="guestsNum">2</span>
-            <button type="button" class="guests-btn" id="guestsPlus">+</button>
-          </div>
-        </div>
-        <button type="button" class="btn-booking" id="heroBookBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <span class="en">Check availability</span>
-          <span class="pt">Verificar datas</span>
-        </button>
+      <!-- Lodgify Booking Widget -->
+      <div class="hero-booking-wrap">
+        <div
+          id="lodgify-search-bar"
+          data-website-id="652424"
+          data-language-code="pt"
+          data-checkout-page-url="https://checkout.lodgify.com/jose-codinha/pt/#/16403"
+          data-dates-check-in-label="Check-in"
+          data-dates-check-out-label="Check-out"
+          data-guests-counter-label="Convidados"
+          data-guests-input-singular-label="Convidado de {{NumberOfGuests}}"
+          data-guests-input-plural-label="Convidados de {{NumberOfGuests}}"
+          data-location-input-label="Localização"
+          data-search-button-label="Pesquisar"
+          data-dates-input-min-stay-tooltip-text='{"one":"Mínimo {minStay} noite","other":"Mínimo de {minStay} noites"}'
+          data-guests-breakdown-label="Hóspedes"
+          data-adults-label='{"one":"adulto","other":"adultos"}'
+          data-adults-description="Idade {minAge} ou superior"
+          data-children-label='{"one":"criança","other":"crianças"}'
+          data-children-description="Idades {minAge} - {maxAge}"
+          data-children-not-allowed-label="Não adaptado para crianças"
+          data-infants-label='{"one":"bebé","other":"bebés"}'
+          data-infants-description="Menos de {maxAge}"
+          data-infants-not-allowed-label="Não adaptado para bebés"
+          data-pets-label='{"one":"animal de estimação","other":"animais de estimação"}'
+          data-pets-not-allowed-label="Não permitido"
+          data-done-label="Feito"
+          data-new-tab="false"
+          data-version="stable"
+          data-has-guests-breakdown
+        ></div>
       </div>
     </div>
   </div>
@@ -491,8 +509,7 @@
 
 
 <script src="js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+<script src="https://app.lodgify.com/portable-search-bar/stable/renderPortableSearchBar.js" defer></script>
 </body>
 </html>
 

@@ -471,228 +471,18 @@ svg.i {
 
 .hero-ctas { display: flex; gap: 1rem; justify-content: center; }
 
-/* â”€â”€ Hero Booking Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.hero-booking {
-  display: flex;
-  align-items: center;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 60px;
-  padding: 0.5rem 0.5rem 0.5rem 1.8rem;
-  gap: 0;
-  max-width: 780px;
-  margin-inline: auto;
-  margin-top: 2rem;
-}
 
-.hero-booking-field {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  padding: 0.5rem 1rem;
+/* -- Lodgify Booking Widget wrapper --------------------------------- */
+.hero-booking-wrap {
+  width: 100%;
+  max-width: 860px;
+  margin: 2rem auto 0;
 }
-
-.booking-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-}
-
-.booking-fp-input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
-  height: 0;
-}
-
-.booking-value {
-  color: var(--white);
-  font-size: 0.9rem;
-  font-weight: 400;
-  cursor: pointer;
-  display: block;
-  min-height: 1.4em;
-}
-.booking-value strong { font-weight: 600; }
-
-.hero-booking-field {
-  cursor: pointer;
-  transition: background var(--trans);
-  border-radius: 40px;
-  padding: 0.5rem 1.2rem;
-}
-.hero-booking-field:hover { background: rgba(255,255,255,0.08); }
-
-/* Flatpickr theme overrides */
-.flatpickr-calendar {
-  border-radius: 16px !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25) !important;
-  border: none !important;
-  font-family: var(--sans) !important;
-  margin-top: 8px !important;
-}
-.flatpickr-day.selected,
-.flatpickr-day.startRange,
-.flatpickr-day.endRange {
-  background: var(--gold) !important;
-  border-color: var(--gold) !important;
-}
-.flatpickr-day.inRange {
-  background: rgba(7,99,102,0.12) !important;
-  border-color: transparent !important;
-  box-shadow: -5px 0 0 rgba(7,99,102,0.12), 5px 0 0 rgba(7,99,102,0.12) !important;
-}
-.flatpickr-day:hover {
-  background: rgba(7,99,102,0.15) !important;
-  border-color: transparent !important;
-}
-.flatpickr-months .flatpickr-month,
-.flatpickr-current-month,
-.flatpickr-weekday {
-  color: var(--dark) !important;
-  fill: var(--dark) !important;
-}
-.flatpickr-prev-month svg, .flatpickr-next-month svg { fill: var(--dark) !important; }
-.flatpickr-day.today { border-color: var(--gold) !important; }
-
-/* â”€â”€ Flatpickr year picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.numInputWrapper span.arrowUp,
-.numInputWrapper span.arrowDown { display: none !important; }
-.numInput.cur-year {
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-  appearance: textfield;
-  border: none !important;
-  background: transparent !important;
-  cursor: pointer !important;
-  font-weight: 600 !important;
-  padding: 0 2px !important;
-  width: 4.2ch !important;
-  color: inherit !important;
-  text-decoration: underline;
-  text-decoration-color: var(--gold);
-  text-underline-offset: 3px;
-}
-.numInput.cur-year:focus { outline: none !important; box-shadow: none !important; }
-.numInputWrapper { position: relative !important; }
-
-/* Year grid popup */
-.fp-year-grid {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 32px rgba(0,0,0,0.18);
-  padding: 0.6rem;
-  z-index: 99999;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  min-width: 168px;
-}
-.fp-year-btn {
-  padding: 7px 6px;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: #1C1C1A;
-  font-family: 'Inter', sans-serif;
-  transition: background 0.15s;
-  white-space: nowrap;
-}
-.fp-year-btn:hover { background: #F0EBE3; }
-.fp-year-btn.is-current { background: #076366; color: #fff; font-weight: 700; }
-
-.booking-sep {
-  width: 1px;
-  height: 36px;
-  background: rgba(255,255,255,0.2);
-  flex-shrink: 0;
-}
-
-.field-guests {
-  align-items: center;
-}
-
-.booking-guests {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--white);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.guests-btn {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: var(--white);
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--trans);
-}
-.guests-btn:hover { background: rgba(255,255,255,0.3); }
-
-.btn-booking {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 1.8rem;
-  background: var(--gold);
-  color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: all var(--trans);
-}
-.btn-booking:hover { background: var(--dark); transform: translateY(-1px); }
 
 @media (max-width: 768px) {
-  .hero-badges {
-    gap: 1.2rem;
-  }
-  .hero-badge-icon {
-    width: 38px;
-    height: 38px;
-  }
-  .hero-badge-icon svg {
-    width: 17px;
-    height: 17px;
-  }
-  .hero-booking {
-    flex-direction: column;
-    border-radius: 20px;
-    padding: 1.2rem 1.5rem;
-    gap: 0.8rem;
-    align-items: stretch;
-  }
-  .booking-sep { width: 100%; height: 1px; }
-  .hero-booking-field { padding: 0; }
-  .btn-booking { justify-content: center; }
+  .hero-badges { gap: 1.2rem; }
+  .hero-badge-icon { width: 38px; height: 38px; }
+  .hero-badge-icon svg { width: 17px; height: 17px; }
 }
 
 .btn-round {
@@ -1539,12 +1329,6 @@ svg.i {
   .header-right .lang-switcher { display: none; }
   /* Smaller logo on mobile */
   .logo-img { height: 26px !important; }
-  /* Center guests row on mobile booking bar */
-  .hero-booking .hero-booking-field:has(.booking-guests) {
-    align-items: center;
-    text-align: center;
-  }
-  .booking-guests { justify-content: center; }
 }
 
 @media (max-width: 480px) {
