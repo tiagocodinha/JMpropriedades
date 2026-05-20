@@ -472,11 +472,19 @@ svg.i {
 .hero-ctas { display: flex; gap: 1rem; justify-content: center; }
 
 
-/* -- Lodgify Booking Widget wrapper --------------------------------- */
+/* -- Smoobu Booking Widget wrapper ---------------------------------- */
 .hero-booking-wrap {
   width: 100%;
-  max-width: 860px;
+  max-width: 900px;
   margin: 2rem auto 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+#apartmentIframeAll iframe {
+  display: block;
+  width: 100%;
+  border: none;
 }
 
 @media (max-width: 768px) {
