@@ -10,6 +10,25 @@
 :root {
   --bg:          #FAF9F7;
   --dark:        #1C1C1A;
+
+  /* Smoobu widget theme */
+  --font-color-default: #3A3A38;
+  --font-color-label: #8C8C89;
+  --font-color-input: #3A3A38;
+  --font-color-icons: #076366;
+  --font-color-input-icons: #8C8C89;
+  --font-color-headlines: #1C1C1A;
+  --font-color-error: #F45B69;
+  --font-color-black: #1C1C1A;
+  --border-radius: 5px;
+  --border-width: 1px;
+  --border-color-default: #ced4da;
+  --border-color-container: #ced4da;
+  --border-color-input: #ced4da;
+  --border-color-image: #ced4da;
+  --border-color-error-shaddow: rgba(244, 91, 105, 0.25);
+  --button-color-primary: #076366;
+  --button-color-secondary: #ffffff;
   --gold:        #076366;
   --gold-light:  #5ac8cd;
   --sand:        #F0EBE3;
